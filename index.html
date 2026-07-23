@@ -69,7 +69,7 @@ input,textarea,select{font-family:inherit; color:inherit;}
   display:flex; flex-direction:column; transform:translateX(0); transition:transform .32s cubic-bezier(.32,.72,0,1);
 }
 #sidebar.hidden{transform:translateX(-100%); position:absolute; inset:0; z-index:20;}
-.sidebar-header{padding:14px 14px 8px; display:flex; gap:8px; align-items:center;}
+.sidebar-header{padding:calc(14px + env(safe-area-inset-top)) 14px 8px; display:flex; gap:8px; align-items:center;}
 .sidebar-header h1{font-size:17px; font-weight:600; margin:0; flex:1;}
 .icon-btn{
   width:34px; height:34px; border-radius:10px; display:flex; align-items:center; justify-content:center;
@@ -106,7 +106,7 @@ input,textarea,select{font-family:inherit; color:inherit;}
 /* ---------- Main chat column ---------- */
 #main{flex:1; display:flex; flex-direction:column; min-width:0; position:relative;}
 #chat-header{
-  display:flex; align-items:center; gap:10px; padding:10px 16px; border-bottom:1px solid var(--separator);
+  display:flex; align-items:center; gap:10px; padding:calc(10px + env(safe-area-inset-top)) 16px 10px; border-bottom:1px solid var(--separator);
   background:color-mix(in srgb, var(--bg) 72%, transparent); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
   position:sticky; top:0; z-index:5;
 }
